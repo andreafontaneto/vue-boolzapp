@@ -50,12 +50,16 @@ body{
 }
 
 .l-top .user-bar .u-fullname{
+  width: 70%;
   padding-left: 10px;
-  padding-right: 140px;
+}
+
+.l-top .user-bar .u-icons{
+  width: 20%;
 }
 
 .u-icon{
-  font-size: 23px;
+  font-size: 20px;
   color: #A2A2A2;
   padding: 0 10px;
 }
@@ -149,7 +153,7 @@ body{
 }
 
 .user-box .ub-avatar{
-  width: 15%;
+  width: 10%;
   height: 60px;
 }
 
@@ -159,7 +163,7 @@ body{
 }
 
 .user-box .ub-text{
-  width: 55%;
+  width: 60%;
   padding-left: 10px;
 }
 
