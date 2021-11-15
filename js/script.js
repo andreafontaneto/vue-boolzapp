@@ -19,4 +19,116 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
 
 */
 
-console.log('ciao');
+const app = new Vue({
+
+  el: '#app',
+
+  data:[
+
+    contacts: [
+
+      {
+        name: 'Michele',
+        avatar: 'img/avatar_1.jpg',
+        visible: true,
+        messages: [
+
+          {
+            date: '10/01/2020 15:30:55',
+            text: 'Hai portato a spasso il cane?',
+            status: 'sent'
+          },
+          {
+            date: '10/01/2020 15:50:00',
+            text: 'Ricordati di dargli da mangiare',
+            status: 'sent'
+          },
+          {
+            date: '10/01/2020 16:15:22',
+            text: 'Tutto fatto!',
+            status: 'received'
+          },
+
+        ]
+      },
+      {
+        name: 'Fabio',
+        avatar: 'img/avatar_1.jpg',
+        visible: true,
+        messages: [
+
+          {
+            date: '10/01/2020 15:30:55',
+            text: 'Vuoi venire al cinema dopo?',
+            status: 'sent'
+          },
+          {
+            date: '10/01/2020 15:50:00',
+            text: 'Siamo in tre',
+            status: 'sent'
+          },
+          {
+            date: '10/01/2020 16:15:22',
+            text: 'Mi piacerebbe ma devo andare a fare la spesa',
+            status: 'received'
+          },
+
+        ]
+      },
+      {
+        name: 'Samuele',
+        avatar: 'img/avatar_1.jpg',
+        visible: true,
+        messages: [
+
+          {
+            date: '10/01/2020 15:30:55',
+            text: 'Ti ho mandato la foto giusta',
+            status: 'received'
+          },
+          {
+            date: '10/01/2020 15:50:00',
+            text: 'Mi sa che hai sbagliato chat',
+            status: 'sent'
+          },
+          {
+            date: '10/01/2020 16:15:22',
+            text: 'Ah scusa!',
+            status: 'received'
+          },
+
+        ]
+      },
+      {
+        name: 'Luisa',
+        avatar: 'img/avatar_1.jpg',
+        visible: true,
+        messages: [
+
+          {
+            date: '10/01/2020 15:30:55',
+            text: 'Ho avuto in idea',
+            status: 'sent'
+          },
+          {
+            date: '10/01/2020 15:50:00',
+            text: 'Stasera sushi?',
+            status: 'sent'
+          },
+          {
+            date: '10/01/2020 16:15:22',
+            text: 'Sì e dopo cinema',
+            status: 'received'
+          },
+
+        ]
+      },
+
+    ]
+
+  ]
+
+
+
+
+})
