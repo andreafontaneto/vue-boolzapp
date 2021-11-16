@@ -78,7 +78,7 @@
             @click="showMsg(index)"  
             class="user-box active">
             <div class="ub-avatar">
-              <img src="img/avatar_1.jpg" alt="avatar_1">
+              <img :src="`img/avatar${contact.avatar}.jpg`" alt="avatar_1">
             </div>
             <div class="ub-text">
               <p><strong>{{ contact.name }}</strong></p>
@@ -148,12 +148,12 @@
         <div class="user-bar">
 
           <div class="u-avatar">
-            <img :src="`img/avatar${contact.avatar}.jpg`" alt="avatar_1">
+            <img :src="`img/avatar${contacts[activeContact].avatar}.jpg`" alt="avatar_1">
           </div>
 
           <div class="u-fullname">
-            <p v-if="activeMsg >= 0">
-              <strong>{{contacts[activeMsg].name}}</strong>
+            <p>
+              <strong>{{contacts[activeContact].name}}</strong>
             </p>
             <p class="last-access">Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
           </div>

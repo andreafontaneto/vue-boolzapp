@@ -110,7 +110,7 @@ const app = new Vue({
         ],
       },
     ],
-    activeContact: -1
+    activeContact: 0
     
   },
   
@@ -118,7 +118,7 @@ const app = new Vue({
 
     showMsg(index){
       //console.log('mostra messaggi del contatto ad indice', index);
-      this.activeMsg = index;
+      this.activeContact = index;
     },
 
 
