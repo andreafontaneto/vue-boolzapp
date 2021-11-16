@@ -172,15 +172,17 @@
       <div class="r-center">
 
         <!-- message -->
-        <div class="message clearfix">
-          <div class="sent">
-            <p class="message-text">Hai portato a spasso il cane?</p>
-            <p class="message-date">10/01/2020 15:50:00</p>
+        <div
+        v-for="(message, index) in contacts[activeContact].messages" 
+        class="message clearfix">
+          <div :class="message.status">
+            <p class="message-text">{{message.message}}</p>
+            <p class="message-date">{{message.date}}</p>
           </div>
         </div>
         <!-- /message -->
         
-        <div class="message clearfix">
+        <!-- <div class="message clearfix">
           <div class="sent">
             <p class="message-text">Ricordati di dargli da mangiare</p>
             <p class="message-date">10/01/2020 15:50:00</p>
@@ -191,7 +193,7 @@
             <p class="message-text">Tutto fatto!</p>
             <p class="message-date">10/01/2020 15:50:00</p>
           </div>
-        </div>
+        </div> -->
 
       </div>
       <!-- /DX CENTER section -->
