@@ -109,9 +109,21 @@ const app = new Vue({
           }
         ],
       },
-  ]
+    ],
+    activeContact: -1
     
+  },
+  
+  methods: {
+
+    showMsg(index){
+      //console.log('mostra messaggi del contatto ad indice', index);
+      this.activeMsg = index;
+    },
+
+
 
   }
+
 
 })

@@ -73,11 +73,12 @@
         <div class="contact-list">
           
           <!-- contatto -->
-          <div 
-            v-for="(contact, index) in contacts" 
+          <div
+            v-for="(contact, index) in contacts"
+            @click="showMsg(index)"  
             class="user-box active">
             <div class="ub-avatar">
-              <img :src="`img/avatar${contact.avatar}.jpg`" alt="avatar_1">
+              <img src="img/avatar_1.jpg" alt="avatar_1">
             </div>
             <div class="ub-text">
               <p><strong>{{ contact.name }}</strong></p>
@@ -147,11 +148,13 @@
         <div class="user-bar">
 
           <div class="u-avatar">
-            <img src="img/avatar_1.jpg" alt="avatar_1">
+            <img :src="`img/avatar${contact.avatar}.jpg`" alt="avatar_1">
           </div>
 
           <div class="u-fullname">
-            <p><strong>Michele</strong></p>
+            <p v-if="activeMsg >= 0">
+              <strong>{{contacts[activeMsg].name}}</strong>
+            </p>
             <p class="last-access">Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
           </div>
 
