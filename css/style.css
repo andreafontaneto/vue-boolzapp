@@ -157,6 +157,11 @@ body{
   border-bottom: 1px solid lightgray;
   display: flex;
   align-items: start;
+  cursor: pointer;
+}
+
+.l-bottom .contact-list .user-box:hover{
+  background-color: rgb(233, 232, 232);
 }
 
 .user-box .ub-avatar{

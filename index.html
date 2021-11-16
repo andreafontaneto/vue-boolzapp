@@ -15,14 +15,17 @@
 
   <div id="app" class="container">
 
+    <!-- CONTENITORE SX -->
     <div class="left">
       
+      <!-- SX TOP section -->
       <div class="l-top">
         
+        <!-- userbar -->
         <div class="user-bar">
 
           <div class="u-avatar">
-            <img src="img/avatar_1.jpg" alt="avatar_1">
+            <img src="img/avatar_io.jpg" alt="avatar_io">
           </div>
 
           <div class="u-fullname"><strong>Nome Utente</strong></div>
@@ -34,7 +37,9 @@
           </div>
 
         </div>
+        <!-- /userbar -->
         
+        <!-- notification bar -->
         <div class="notification-bar">
 
           <div class="n-icon">
@@ -47,34 +52,44 @@
           </div>
 
         </div>
+        <!-- /notification bar -->
       
       </div>
+      <!-- /SX TOP section -->
       
+      <!-- SX BOTTOM section -->
       <div class="l-bottom">
         
+        <!-- search bar -->
         <div class="search-bar">
           <div class="search-icon">
             <i class="fas fa-search"></i>
           </div>
           <input type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
+        <!-- /search bar -->
 
+        <!-- lista contatti -->
         <div class="contact-list">
           
-          <div class="user-box">
+          <!-- contatto -->
+          <div 
+            v-for="(contact, index) in contacts" 
+            class="user-box active">
             <div class="ub-avatar">
-              <img src="img/avatar_1.jpg" alt="avatar_1">
+              <img :src="`img/avatar${contact.avatar}.jpg`" alt="avatar_1">
             </div>
             <div class="ub-text">
-              <p><strong>Michele</strong></p>
+              <p><strong>{{ contact.name }}</strong></p>
               <p class="ub-message">Tutto fatto! ...</p>
             </div>
             <div class="ub-date">
               <p>10/01/2020 16:15:22</p>
             </div>
           </div>
+          <!-- contatto -->
 
-          <div class="user-box">
+          <!-- <div class="user-box">
             <div class="ub-avatar">
               <img src="img/avatar_2.jpg" alt="avatar_2">
             </div>
@@ -111,17 +126,24 @@
             <div class="ub-date">
               <p>10/01/2020 15:50:00</p>
             </div>
-          </div>
+          </div> -->
           
         </div>
+        <!-- /lista contatti -->
 
       </div>
+      <!-- /SX BOTTOM section -->
     
     </div>
+    <!-- /CONTENITORE SX -->
     
+    <!-- CONTENITORE DX -->
     <div class="right">
       
+      <!-- DX TOP section -->
       <div class="r-top">
+        
+        <!-- userbar -->
         <div class="user-bar">
 
           <div class="u-avatar">
@@ -141,14 +163,20 @@
 
         </div>
       </div>
+      <!-- /DX TOP section -->
       
+      <!-- DX CENTER section -->
       <div class="r-center">
+
+        <!-- message -->
         <div class="message clearfix">
           <div class="sent">
             <p class="message-text">Hai portato a spasso il cane?</p>
             <p class="message-date">10/01/2020 15:50:00</p>
           </div>
         </div>
+        <!-- /message -->
+        
         <div class="message clearfix">
           <div class="sent">
             <p class="message-text">Ricordati di dargli da mangiare</p>
@@ -161,20 +189,30 @@
             <p class="message-date">10/01/2020 15:50:00</p>
           </div>
         </div>
+
       </div>
+      <!-- /DX CENTER section -->
       
+      <!-- DX BOTTOM section -->
       <div class="r-bottom">
+        
         <div class="emoji">
           <i class="far fa-smile"></i>
         </div>
+        
         <div class="text-input">
           <input type="text" placeholder="Scrivi un messaggio">
         </div>
+        
         <div class="vocal">
           <i class="fas fa-microphone"></i>
         </div>
+      
       </div>
-    </div>    
+      <!-- /DX BOTTOM section -->
+
+    </div>
+    <!-- /CONTENITORE DX -->    
 
   </div>
 
