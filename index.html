@@ -75,14 +75,16 @@
           <!-- contatto -->
           <div
             v-for="(contact, index) in contacts"
-            @click="showMsg(index)"  
-            class="user-box active">
+            @click="showMsg(index)"
+            :class="{'active' : activeContact === index}"  
+            class="user-box"
+          >
             <div class="ub-avatar">
               <img :src="`img/avatar${contact.avatar}.jpg`" alt="avatar_1">
             </div>
             <div class="ub-text">
               <p><strong>{{ contact.name }}</strong></p>
-              <p class="ub-message">Tutto fatto! ...</p>
+              <p class="ub-message">{{getLastMessage(index)}}</p>
             </div>
             <div class="ub-date">
               <p>10/01/2020 16:15:22</p>
@@ -173,11 +175,11 @@
 
         <!-- message -->
         <div
-        v-for="(message, index) in contacts[activeContact].messages" 
+        v-for="(item, index) in contacts[activeContact].messages" 
         class="message clearfix">
-          <div :class="message.status">
-            <p class="message-text">{{message.message}}</p>
-            <p class="message-date">{{message.date}}</p>
+          <div :class="item.status">
+            <p class="message-text">{{item.message}}</p>
+            <p class="message-date">{{item.date}}</p>
           </div>
         </div>
         <!-- /message -->

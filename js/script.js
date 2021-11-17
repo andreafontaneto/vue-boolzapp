@@ -121,6 +121,18 @@ const app = new Vue({
       this.activeContact = index;
     },
 
+    getLastMessage(index){
+      
+      let lastMessage = this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
+
+      if(lastMessage.length > 25){
+        lastMessage = lastMessage.slice(0, 25) + '...';
+      };
+
+      return lastMessage;
+      //return 'ultimo messaggio';
+    }
+
 
 
   }
