@@ -110,7 +110,8 @@ const app = new Vue({
         ],
       },
     ],
-    activeContact: 0
+    activeContact: 0,
+    emptyTextMessage: '',
     
   },
   
@@ -131,6 +132,23 @@ const app = new Vue({
 
       return lastMessage;
       //return 'ultimo messaggio';
+    },
+
+    addNewMessage(index){
+
+      console.log('messaggio aggiunto');
+
+      this.activeContact = index;
+
+      this.contacts[activeContact].messages.push(
+        {
+          date: 'gg/mm/aaaa 00:00:00',
+          message: this.emptyTextMessage,
+          status: 'sent'
+        }
+      );
+
+      this.emptyTextMessage = '';
     }
 
 

@@ -208,7 +208,11 @@
         </div>
         
         <div class="text-input">
-          <input type="text" placeholder="Scrivi un messaggio">
+          <input 
+          v-model="emptyTextMessage" 
+          @keyup.enter="addNewMessage" 
+          type="text" placeholder="Scrivi un messaggio"
+          >
         </div>
         
         <div class="vocal">
