@@ -143,11 +143,12 @@ body{
 }
 
 .l-bottom .contact-list{
-  width: 98%;
+  width: 100%;
   height: calc(100% - 55px);
   background-color: #FFFFFF;
   border-top: 1px solid lightgray;
   border-right: 1px solid lightgray;
+  overflow-y: scroll;
 }
 
 .l-bottom .contact-list .user-box{
@@ -216,10 +217,11 @@ body{
 }
 
 .r-center{
-  width: 98%;
+  width: 100%;
   height: calc(100% - 70px - 70px);
   background-image: url('../img/mine.jpg');
   padding: 50px;
+  overflow-y: scroll;
 }
 
 .message{

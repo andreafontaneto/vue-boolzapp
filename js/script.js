@@ -134,22 +134,53 @@ const app = new Vue({
       //return 'ultimo messaggio';
     },
 
-    addNewMessage(index){
+    addNewMessage(){
 
       console.log('messaggio aggiunto');
 
-      this.activeContact = index;
+      console.log(this.contacts[this.activeContact]);
 
-      this.contacts[activeContact].messages.push(
+      this.contacts[this.activeContact].messages.push(
         {
-          date: 'gg/mm/aaaa 00:00:00',
+          date: this.getDate() + ' ' + this.getHour(),
           message: this.emptyTextMessage,
           status: 'sent'
         }
       );
 
       this.emptyTextMessage = '';
-    }
+
+      setTimeout(() => {
+
+        this.contacts[this.activeContact].messages.push(
+          {
+            date: this.getDate() + ' ' + this.getHour(),
+            message: 'va bene :)',
+            status: 'received'
+          }
+        );
+
+
+      }, 1000)
+    },
+
+    getDate(){
+      const d = new Date();
+
+      let time = `${d.getDate()}/${d.getMonth()}/${d.getFullYear()}`;
+
+      return time;
+    },
+
+    getHour(){
+      const d = new Date();
+
+      let time = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
+
+      return time;
+    },
+
+
 
 
 
