@@ -67,7 +67,7 @@
           </div>
           <input 
           v-model="searchContactName"
-          @keyup.enter="findContact"
+          @keyup="findContact"
           type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
         <!-- /search bar -->
@@ -79,7 +79,8 @@
           <div
             v-for="(contact, index) in contacts"
             @click="showMsg(index)"
-            :class="{'active' : activeContact === index}"  
+            :class="{'active' : activeContact === index}"
+            v-if="contact.visible === true"  
             class="user-box"
           >
             <div class="ub-avatar">

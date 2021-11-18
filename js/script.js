@@ -167,19 +167,27 @@ const app = new Vue({
 
     findContact(){
 
-      const contactsNamesArray =[];
+      // this.contacts.forEach(function (contact) {
+
+      // });
+
+      // this.contacts.forEach((contact) => {
+
+      // });
 
       for(contact of this.contacts){ 
-        console.log('nome contatto',contact.name);
-        contactsNamesArray.push(contact.name.toLowerCase());
-      }
+        
+        const filteredContact = contact.name.toLowerCase().includes(this.searchContactName);
 
-      console.log(contactsNamesArray);
-      
-      const filteredContact = contactsNamesArray.includes(this.searchContactName);
-      console.log(filteredContact);
-
-      return filteredContact;
+        console.log(contact.name);
+        console.log(filteredContact);
+        
+        if(filteredContact === false){
+          contact.visible = false;
+        } else {
+          contact.visible = true;
+        }
+      };
       
     },
 
