@@ -93,6 +93,7 @@
             <div class="ub-date">
               <p>10/01/2020 16:15:22</p>
             </div>
+
           </div>
           <!-- contatto -->
 
@@ -182,8 +183,14 @@
         v-for="(item, index) in contacts[activeContact].messages" 
         class="message clearfix">
           <div :class="item.status">
+          
             <p class="message-text">{{item.message}}</p>
             <p class="message-date">{{item.date}}</p>
+            
+            <div class="chevron">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          
           </div>
         </div>
         <!-- /message -->
