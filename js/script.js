@@ -110,19 +110,21 @@ const app = new Vue({
         ],
       },
     ],
-    activeContact: 0,
-    emptyTextMessage: '',
-    searchContactName: ''
+    activeContact: 0, // sarà l'indice del contatto attivo
+    emptyTextMessage: '', // sarà il testo del mio messaggio inviato
+    searchContactName: '' // sarà il testo nell'input di ricerca contatto
     
   },
   
   methods: {
 
+    //mostro la chat dell'utente attivo
     showMsg(index){
       //console.log('mostra messaggi del contatto ad indice', index);
       this.activeContact = index;
     },
 
+    // mostro l'anteprima dell'ultimo messaggio inviato
     getLastMessage(index){
       
       let lastMessage = this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
@@ -135,24 +137,31 @@ const app = new Vue({
       //return 'ultimo messaggio';
     },
 
+    // invio un nuovo messaggio
     addNewMessage(){
 
       //console.log('messaggio aggiunto');
-
       //console.log(this.contacts[this.activeContact]);
 
+      // pusho un nuovo oggetto "message" nell'array "messages"
       this.contacts[this.activeContact].messages.push(
         {
-          date: this.getDate() + ' ' + this.getHour(),
+          // come data richiama le MIE 2 funzioni "getDate" e "getHour"
+          date: this.getDate() + ' ' + this.getHour(), 
+          // come testo ha la mia stringa vuota
           message: this.emptyTextMessage,
+          // come status è inviato 
           status: 'sent'
         }
       );
 
+      // resetto stringa collegata all'input
       this.emptyTextMessage = '';
 
+      // dopo 1 secondo ricevo il messaggio di risposta
       setTimeout(() => {
 
+        // pusho un altro nuovo oggetto "message" nell'array "messages" (guarda sopra)
         this.contacts[this.activeContact].messages.push(
           {
             date: this.getDate() + ' ' + this.getHour(),
@@ -165,23 +174,27 @@ const app = new Vue({
       }, 1000)
     },
 
+    // ricerco il contatto giusto
     findContact(){
 
-      // this.contacts.forEach(function (contact) {
+      /*this.contacts.forEach(function (contact) {
+      });
 
-      // });
+      this.contacts.forEach((contact) => {
+      });*/
 
-      // this.contacts.forEach((contact) => {
-
-      // });
-
+      // ciclo ogni contatto in contatti
       for(contact of this.contacts){ 
-        
-        const filteredContact = contact.name.toLowerCase().includes(this.searchContactName);
 
+        // guardo se la mia stringa è inclusa nella proprietà "name" dell'oggetto "contact"
+        // trasformo il risultato in lowercase
+        // salvo il risultato (true/false) in una costante
+        const filteredContact = contact.name.toLowerCase().includes(this.searchContactName);
+        
         console.log(contact.name);
         console.log(filteredContact);
-        
+
+        // controllo di validità
         if(filteredContact === false){
           contact.visible = false;
         } else {
@@ -191,19 +204,17 @@ const app = new Vue({
       
     },
 
+    // recupero la data attuale
     getDate(){
       const d = new Date();
-
       let time = `${d.getDate()}/${d.getMonth()}/${d.getFullYear()}`;
-
       return time;
     },
 
+    // recupero il giorno attuale
     getHour(){
       const d = new Date();
-
       let time = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
-
       return time;
     },
 
