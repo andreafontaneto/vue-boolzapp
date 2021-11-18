@@ -189,7 +189,7 @@ const app = new Vue({
         // guardo se la mia stringa è inclusa nella proprietà "name" dell'oggetto "contact"
         // trasformo il risultato in lowercase
         // salvo il risultato (true/false) in una costante
-        const filteredContact = contact.name.toLowerCase().includes(this.searchContactName);
+        const filteredContact = contact.name.toLowerCase().includes(this.searchContactName.toLowerCase());
         
         console.log(contact.name);
         console.log(filteredContact);
