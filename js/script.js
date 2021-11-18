@@ -170,7 +170,7 @@ const app = new Vue({
       const contactsNamesArray =[];
 
       for(contact of this.contacts){ 
-        console.log(contact.name);
+        console.log('nome contatto',contact.name);
         contactsNamesArray.push(contact.name.toLowerCase());
       }
 
@@ -178,6 +178,8 @@ const app = new Vue({
       
       const filteredContact = contactsNamesArray.includes(this.searchContactName);
       console.log(filteredContact);
+
+      return filteredContact;
       
     },
 
