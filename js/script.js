@@ -136,9 +136,9 @@ const app = new Vue({
 
     addNewMessage(){
 
-      console.log('messaggio aggiunto');
+      //console.log('messaggio aggiunto');
 
-      console.log(this.contacts[this.activeContact]);
+      //console.log(this.contacts[this.activeContact]);
 
       this.contacts[this.activeContact].messages.push(
         {

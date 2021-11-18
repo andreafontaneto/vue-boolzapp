@@ -6,7 +6,13 @@
 
 body{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-color: antiquewhite;
+  background-image: linear-gradient(
+    to bottom, 
+    #268575 0%, 
+    #268575 15% , 
+    #D5D3C8 15%, 
+    #C8D1D4 100%
+    );
 }
 
 .clearfix::after{
@@ -18,7 +24,7 @@ body{
 .container{
   width: 80%;
   height: 95vh;
-  min-width: 800px;
+  min-width: 1000px;
   margin: 20px auto;
   background-color: brown;
   display: flex;
@@ -40,7 +46,6 @@ body{
 
 .user-bar{
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: #E5E5E4;
   padding: 10px;
@@ -57,12 +62,11 @@ body{
 }
 
 .user-bar .u-fullname{
-  width: 70%;
   padding-left: 10px;
 }
 
-.l-top .user-bar .u-icons{
-  width: 20%;
+.user-bar .u-icons{
+  margin-left: auto;
 }
 
 .u-icon{
@@ -162,15 +166,15 @@ body{
 }
 
 .l-bottom .contact-list .user-box:hover{
-  background-color: rgb(233, 232, 232);
+  background-color: #f1f1f1;
 }
 
 .l-bottom .contact-list .user-box.active{
-  background-color: rgb(219, 219, 219);
+  background-color: #E4E6E5;
 }
 
 .user-box .ub-avatar{
-  width: 10%;
+  width: 60px;
   height: 60px;
 }
 
@@ -190,14 +194,14 @@ body{
 
 .user-box .ub-text .ub-message{
   font-size: 13px;
-  color: lightgray;
+  color: #919191;
   padding-top: 5px;
 }
 
 .user-box .ub-date{
   width: 30%;
   font-size: 12px;
-  color: lightgray;
+  color: #919191;
   text-align: right;
 }
 
@@ -212,7 +216,7 @@ body{
 
 .last-access{
   font-size: 12px;
-  color: #436676;
+  color: #919191;
   padding-top: 5px;
 }
 
@@ -251,7 +255,7 @@ body{
 
 .message-date{
   font-size: 10px;
-  color: #436676;
+  color: #919191;
   text-align: right;
 }
 
