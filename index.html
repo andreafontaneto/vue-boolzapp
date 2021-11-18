@@ -65,7 +65,10 @@
           <div class="search-icon">
             <i class="fas fa-search"></i>
           </div>
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
+          <input 
+          v-model="searchContactName"
+          @keyup.enter="findContact"
+          type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
         <!-- /search bar -->
 

@@ -112,6 +112,7 @@ const app = new Vue({
     ],
     activeContact: 0,
     emptyTextMessage: '',
+    searchContactName: ''
     
   },
   
@@ -162,6 +163,22 @@ const app = new Vue({
 
 
       }, 1000)
+    },
+
+    findContact(){
+
+      const contactsNamesArray =[];
+
+      for(contact of this.contacts){ 
+        console.log(contact.name);
+        contactsNamesArray.push(contact.name.toLowerCase());
+      }
+
+      console.log(contactsNamesArray);
+      
+      const filteredContact = contactsNamesArray.includes(this.searchContactName);
+      console.log(filteredContact);
+      
     },
 
     getDate(){
